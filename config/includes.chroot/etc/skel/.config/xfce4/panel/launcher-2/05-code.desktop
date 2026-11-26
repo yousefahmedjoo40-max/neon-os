@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Visual Studio Code
+Comment=Visual Studio Code
+Exec=/opt/novaos/neon/neon-flatpak-run.sh com.visualstudio.code Visual-Studio-Code
+Icon=com.visualstudio.code
+Terminal=false
+StartupNotify=true

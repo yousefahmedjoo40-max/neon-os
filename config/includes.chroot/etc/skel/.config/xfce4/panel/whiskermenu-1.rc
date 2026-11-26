@@ -1,0 +1,14 @@
+favorites=neon-center.desktop,thunar.desktop,firefox-esr.desktop,neon-games.desktop,neon-code.desktop,neon-taskmanager.desktop,xfce4-terminal.desktop
+button-icon=/usr/share/novaos/neon-logo-48.png
+button-single-row=false
+show-button-title=false
+show-button-icon=true
+launcher-show-name=true
+launcher-show-description=false
+category-icon-size=2
+item-icon-size=3
+position-search-alternate=true
+menu-width=540
+menu-height=600
+menu-opacity=95
+profile-shape=1

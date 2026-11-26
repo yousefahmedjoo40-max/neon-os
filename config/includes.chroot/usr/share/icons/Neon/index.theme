@@ -1,0 +1,10 @@
+[Icon Theme]
+Name=Neon
+Comment=NeonOS icon set
+Inherits=Papirus-Dark,Adwaita,hicolor
+Directories=256x256/apps
+
+[256x256/apps]
+Size=256
+Context=Applications
+Type=Fixed

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Settings
+Comment=Settings
+Exec=python3 /opt/novaos/neon/neon_center.py
+Icon=neon-settings
+Terminal=false
+StartupNotify=true

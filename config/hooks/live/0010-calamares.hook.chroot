@@ -1,0 +1,52 @@
+#!/bin/bash
+# تهيئة Calamares كمثبّت دائم على القرص
+set -e
+
+mkdir -p /etc/calamares/branding/novaos
+cat > /etc/calamares/branding/novaos/branding.desc << 'BRANDING'
+---
+componentName: novaos
+
+welcomeStyleCalamares: true
+welcomeExpandingLogo: true
+
+windowExpanding: normal
+windowSize: 800px,520px
+
+strings:
+    productName: NeonOS
+    shortProductName: NeonOS
+    version: "1.0"
+    shortVersion: "1.0"
+    versionedName: "NeonOS 1.0"
+    shortVersionedName: "NeonOS 1.0"
+    bootloaderEntryName: NeonOS
+    productUrl: https://example.com/novaos
+    supportUrl: https://example.com/novaos/support
+
+slideshow: "show.qml"
+BRANDING
+
+# استخدام الإعدادات الافتراضية المرفقة من حزمة calamares-settings-debian
+# كأساس، مع تأكيد أن settings.conf يستدعي branding: novaos
+if [[ -f /etc/calamares/settings.conf ]]; then
+  sed -i 's/^branding:.*/branding: novaos/' /etc/calamares/settings.conf || true
+fi
+
+# عرض كل خيارات التقسيم (مسح القرص / التثبيت بجانب النظام الحالي / يدوي)
+PC=/etc/calamares/modules/partition.conf
+if [[ -f "$PC" ]]; then
+  if grep -q '^initialPartitioningChoice' "$PC"; then
+    sed -i 's/^initialPartitioningChoice:.*/initialPartitioningChoice: none/' "$PC"
+  else
+    echo 'initialPartitioningChoice: none' >> "$PC"
+  fi
+fi
+
+# GRUB: اكتشاف ويندوز/لينكس الموجودين وإظهارهم في قائمة الإقلاع (معطّل افتراضياً في Debian 12)
+mkdir -p /etc/default
+touch /etc/default/grub
+sed -i '/^GRUB_DISABLE_OS_PROBER/d' /etc/default/grub
+echo 'GRUB_DISABLE_OS_PROBER=false' >> /etc/default/grub
+
+echo "[hook] Calamares تم تهيئته."

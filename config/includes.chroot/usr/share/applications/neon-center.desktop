@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Settings
+Comment=Network, drivers, updates, taskbar, language and more
+Exec=python3 /opt/novaos/neon/neon_center.py
+Icon=neon-settings
+Categories=System;Settings;
+Terminal=false
+StartupNotify=true

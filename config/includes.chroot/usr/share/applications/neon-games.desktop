@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Games
+Comment=22 games — chess vs bot, racing, puzzles and more
+Exec=python3 /opt/novaos/neon/neon_center.py --page games
+Icon=neon-games
+Categories=Game;
+Terminal=false
+StartupNotify=true

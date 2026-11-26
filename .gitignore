@@ -1,0 +1,5 @@
+novaos-apps_*.deb
+__pycache__/
+*.pyc
+build.log
+release/

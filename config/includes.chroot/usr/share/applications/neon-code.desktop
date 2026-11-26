@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Visual Studio Code
+Comment=Code editor (installs itself on first launch)
+Exec=/opt/novaos/neon/neon-flatpak-run.sh com.visualstudio.code Visual-Studio-Code
+Icon=com.visualstudio.code
+Categories=Development;
+Terminal=false
+StartupNotify=true

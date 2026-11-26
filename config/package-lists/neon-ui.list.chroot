@@ -1,0 +1,63 @@
+# ===== واجهة NeonOS =====
+arc-theme
+papirus-icon-theme
+fonts-inter
+fonts-noto-core
+fonts-noto-color-emoji
+xfdashboard
+xfce4-whiskermenu-plugin
+xfce4-notifyd
+libnotify-bin
+zenity
+python3-gi-cairo
+
+# ===== ألعاب (ضد بوت وغيرها) =====
+gnome-chess
+stockfish
+iagno
+four-in-a-row
+gnubg
+gnome-mines
+quadrapassel
+gnome-sudoku
+gnome-nibbles
+gnome-2048
+gnome-klotski
+five-or-more
+lightsoff
+gnome-mahjongg
+aisleriot
+supertux
+frozen-bubble
+minetest
+luanti
+
+# ===== دعم كل العتاد: معالجات Intel/AMD Ryzen + كروت Intel/AMD/NVIDIA =====
+intel-microcode
+amd64-microcode
+pciutils
+nvidia-detect
+mesa-va-drivers
+intel-media-va-driver
+vainfo
+xserver-xorg-input-all
+firmware-ralink
+firmware-atheros
+firmware-realtek
+firmware-iwlwifi
+firmware-amd-graphics
+
+# ===== لغات العالم + ملفات =====
+locales-all
+x11-xkb-utils
+gdebi
+file-roller
+thunar-archive-plugin
+thunar-volman
+gvfs-backends
+ntfs-3g
+
+# ألعاب ثقيلة (تُثبَّت بضغطة من Neon Center ← Games عبر Flatpak):
+#supertuxkart
+#openarena
+#xonotic

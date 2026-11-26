@@ -1,0 +1,7 @@
+[Default Applications]
+application/x-ms-dos-executable=neon-exe.desktop
+application/x-msdownload=neon-exe.desktop
+application/x-msi=neon-exe.desktop
+application/vnd.microsoft.portable-executable=neon-exe.desktop
+application/x-dosexec=neon-exe.desktop
+application/vnd.debian.binary-package=gdebi.desktop

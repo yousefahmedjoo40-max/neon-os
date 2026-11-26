@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<channel name="xfce4-keyboard-shortcuts" version="1.0">
+  <property name="commands" type="empty">
+    <property name="custom" type="empty">
+      <property name="override" type="bool" value="true"/>
+      <property name="&lt;Primary&gt;&lt;Shift&gt;Escape" type="string" value="python3 /opt/novaos/neon/neon_taskmgr.py"/>
+      <property name="&lt;Super&gt;e" type="string" value="thunar"/>
+      <property name="&lt;Super&gt;n" type="string" value="python3 /opt/novaos/neon/neon_center.py"/>
+      <property name="&lt;Super&gt;Tab" type="string" value="xfdashboard"/>
+    </property>
+  </property>
+</channel>

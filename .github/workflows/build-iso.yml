@@ -1,0 +1,57 @@
+name: Build NeonOS ISO
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch: {}
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Free up disk space
+        run: |
+          sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/.ghcup /usr/local/lib/android /opt/hostedtoolcache/CodeQL
+          df -h /
+
+      - name: Build ISO
+        run: |
+          chmod +x build.sh
+          sudo ./build.sh
+
+      - name: Prepare release files
+        run: |
+          ISO=$(ls -1 neonos-*.iso | head -n1)
+          mkdir -p release
+          cp "${ISO}.sha256" release/
+          if [ "$(stat -c%s "$ISO")" -gt 2000000000 ]; then
+            split -b 1900M -d "$ISO" "release/${ISO}.part"
+            echo "cat ${ISO}.part* > ${ISO}" > release/JOIN-INSTRUCTIONS.txt
+          else
+            mv "$ISO" release/
+          fi
+          ls -lh release
+
+      - name: Upload build log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-log
+          path: build.log
+          retention-days: 7
+          if-no-files-found: ignore
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          files: release/*
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

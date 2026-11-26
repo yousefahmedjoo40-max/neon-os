@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Task Manager
+Comment=Processes and live performance
+Exec=python3 /opt/novaos/neon/neon_taskmgr.py
+Icon=neon-taskmanager
+Categories=System;Monitor;
+Terminal=false
+StartupNotify=true

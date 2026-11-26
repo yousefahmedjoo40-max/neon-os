@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=NeonOS Session
+Exec=/opt/novaos/neon/session-setup.sh
+NoDisplay=true
+X-GNOME-Autostart-enabled=true

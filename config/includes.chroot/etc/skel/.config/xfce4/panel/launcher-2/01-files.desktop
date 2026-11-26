@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Files
+Comment=Files
+Exec=thunar
+Icon=system-file-manager
+Terminal=false
+StartupNotify=true

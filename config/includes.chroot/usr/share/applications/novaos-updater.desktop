@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=NeonOS Updater
+Name[ar]=محدّث NeonOS
+Comment=Check for and apply NeonOS system updates
+Exec=python3 /opt/novaos/neon/neon_center.py --page updates
+Icon=system-software-update
+Categories=System;
+Terminal=false

@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=NeonOS Update Indicator
+Exec=python3 /opt/novaos/neon/neon-tray.py
+NoDisplay=true
+X-GNOME-Autostart-enabled=true

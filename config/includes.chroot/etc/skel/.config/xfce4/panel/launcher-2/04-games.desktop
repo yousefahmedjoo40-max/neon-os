@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Games
+Comment=Games
+Exec=python3 /opt/novaos/neon/neon_center.py --page games
+Icon=neon-games
+Terminal=false
+StartupNotify=true
